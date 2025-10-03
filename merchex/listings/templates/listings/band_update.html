@@ -1,0 +1,14 @@
+{% extends "listings/base.html" %}
+
+{% block title %}
+    Modifier une Band
+{% endblock title %}
+
+{% block content %}
+    <h1>Mette à jour {{ band.name }}</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>mettre à jour</button>
+    </form>
+{% endblock content %}

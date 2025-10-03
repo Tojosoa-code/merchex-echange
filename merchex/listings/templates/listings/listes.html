@@ -1,8 +1,24 @@
 {% extends "listings/base.html" %} {% block content %}
-<h1>Listes</h1>
-<ul>
+<div class="d-flex justify-content-between align-items-center">
+  <h1>Listes des annonces</h1>
+  <a href="{% url "list_create" %}" class="btn btn-primary">créer une annonce +</a>
+</div>
+<hr>
+<div class="row row-cols-3 g-3">
   {% for list in listes %}
-  <li>{{ list.title }}</li>
+  <div class="col">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">
+          <a href="{% url 'list_detail' list.id %}" class="text-decoration-none">
+            {{ list.title }}
+          </a>
+        </h5>
+        <a href="{% url 'list_update' list.id %}" class="btn btn-outline-primary">Modifier</a>
+        <a href="{% url 'list_delete' list.id %}" class="btn btn-outline-danger">Supprimer</a>
+      </div>
+    </div>
+  </div>
   {% endfor %}
-</ul>
+</div>
 {% endblock %}

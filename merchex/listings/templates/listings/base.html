@@ -5,9 +5,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}{% endblock title %}</title>
-    <link rel="stylesheet" href="{% static 'listings/style.css' %}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" />
   </head>
   <body>
-    {% block content %}{% endblock content %}
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'band_list' %}">Listes des groupes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'listes' %}">Listes des annonces</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'about' %}">A propos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+      </li>
+    </ul>
+    <div class="container">
+      {% block content %}{% endblock content %}
+    </div>
   </body>
 </html>

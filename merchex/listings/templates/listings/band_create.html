@@ -1,0 +1,14 @@
+{% extends "listings/base.html" %}
+
+{% block title %}
+    Créer une Band
+{% endblock title %}
+
+{% block content %}
+    <h1>Créer une Band</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Créer +</button>
+    </form>
+{% endblock content %}

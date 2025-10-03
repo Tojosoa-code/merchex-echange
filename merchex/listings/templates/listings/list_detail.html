@@ -1,0 +1,18 @@
+{% extends "listings/base.html" %}
+
+{% block title %} Band {{ band.title }} {% endblock title %}
+
+# template
+{% block content %}
+<h2>{{ list.title }}</h2>
+
+<ul>
+    <li>Année : {{ list.year }}</li>
+    <li>SOLD : {{ list.sold | yesno }}</li>
+    <li>{{ list.band }}</li>
+    <li>Type : {{ list.get_type_display }}</li>
+</ul>
+
+<p>{{ list.description }}</p>
+
+{% endblock content %}
